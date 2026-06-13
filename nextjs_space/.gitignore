@@ -1,0 +1,24 @@
+# Environment files - ΠΟΤΕ να μην ανεβαίνουν στο git
+.env
+.env.local
+.env.production
+.env.development
+.env*.local
+
+# Dependencies
+node_modules/
+
+# Next.js build
+.next/
+out/
+
+# Prisma generated
+prisma/generated/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db

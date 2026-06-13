@@ -1,0 +1,92 @@
+generator client {
+  provider = "prisma-client-js"
+  binaryTargets = ["native"]
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  password      String
+  role          String    @default("staff")
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}
+
+model DailyPlan {
+  id            String    @id @default(cuid())
+  date          DateTime  @unique @db.Date
+  finalized     Boolean   @default(false)
+  finalizedAt   DateTime?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  dormBeds      DormBed[]
+  roomStatuses  RoomStatus[]
+  houseStatuses HouseStatus[]
+}
+
+model DormBed {
+  id            String    @id @default(cuid())
+  planId        String
+  plan          DailyPlan @relation(fields: [planId], references: [id])
+  roomNumber    String
+  bedLabel      String
+  status        String    @default("empty")
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  cleanerName String?
+  @@unique([planId, roomNumber, bedLabel])
+  @@index([planId])
+}
+
+model RoomStatus {
+  id            String    @id @default(cuid())
+  planId        String
+  plan          DailyPlan @relation(fields: [planId], references: [id])
+  roomNumber    String
+  status        String    @default("empty")
+  checkOutTime  String?
+  checkInTime   String?
+  notes         String?
+  cleanerName  String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  @@unique([planId, roomNumber])
+  @@index([planId])
+}
+
+model HouseStatus {
+  id              String    @id @default(cuid())
+  planId          String
+  plan            DailyPlan @relation(fields: [planId], references: [id])
+  houseName       String
+  inHouse         Boolean   @default(false)
+  checkOut        Boolean   @default(false)
+  checkOutTime    String?
+  checkOutTaxi    Boolean   @default(false)
+  checkOutBalance String?
+  checkIn         Boolean   @default(false)
+  checkInTime     String?
+  checkInTaxi     Boolean   @default(false)
+  checkInBalance  String?
+  pax             String?
+  cleanerName    String?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
+  @@unique([planId, houseName])
+  @@index([planId])
+}
+
+model LoginLog {
+  id        String   @id @default(cuid())
+  userId    String?
+  email     String?
+  createdAt DateTime @default(now())
+}

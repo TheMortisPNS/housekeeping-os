@@ -1,0 +1,23 @@
+{
+  "short_name": "Mosaikon",
+  "name": "Mosaikon Housekeeping",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/dashboard",
+  "background_color": "#0a0a0b",
+  "theme_color": "#b38b59",
+  "display": "standalone",
+  "scope": "/",
+  "orientation": "portrait"
+}
