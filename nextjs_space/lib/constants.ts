@@ -20,12 +20,13 @@ export const HOUSES = [
   'ERMOU 3',
   'SOKRATOUS',
   'PETRATOS A4',
-  'PETRATOS A2',
+  'PETRATOS A3',
   'MILTIADOU',
   'VASO',
   'LOFT',
   'K44',
   'TRIGONO',
+  'MAKRYGIANNI',
 ];
 export const STATUS_CYCLE = ['empty', 'IN', 'OUT'] as const;
 export type BedStatus = typeof STATUS_CYCLE[number];
