@@ -147,16 +147,22 @@ const houseStatuses = [...(plan?.houseStatuses ?? [])].sort((a, b) => {
   }
 
   table { width: 100%; border-collapse: collapse; margin-bottom: 6px; }
-  th, td { border: 1.5px solid #000; padding: 4px 5px; text-align: center; font-size: 10px; }
+  th, td {
+    border: 1.5px solid #000;
+    padding: 5px 5px;
+    text-align: center;
+    font-size: 11px;
+    line-height: 1.2;
+  }
   th { background: #f2f2f2; color: #000; font-weight: 700; }
 
   .room-num { font-weight: 700; text-align: left; background: #fafafa; width: 55px; }
   .house-name { font-weight: 700; text-align: left; background: #fafafa; }
-  .cleaner-cell { font-weight: 700; font-size: 10px; }
+  .cleaner-cell { font-weight: 700; font-size: 11px; }
   .status-cell { font-weight: 700; }
 
-  .houses-table th { font-size: 8px; padding: 3px 2px; }
-  .houses-table td { font-size: 9px; padding: 3px 2px; }
+  .houses-table th { font-size: 9px; padding: 4px 2px; }
+  .houses-table td { font-size: 10px; padding: 4px 2px; }
 
   /* DORMS */
   .dorm-room { margin-bottom: 10px; break-inside: avoid; border: 1.5px solid #000; padding: 4px 6px; }
@@ -174,7 +180,7 @@ const houseStatuses = [...(plan?.houseStatuses ?? [])].sort((a, b) => {
   .bed-cell { position: relative; }
   .bed-na { background: #eee; }
   .bed-label {
-    font-size: 8px; font-weight: 700;
+    font-size: 9px; font-weight: 700;
     display: block;
     border-bottom: 1px solid #999;
     margin-bottom: 3px;
@@ -192,7 +198,7 @@ const houseStatuses = [...(plan?.houseStatuses ?? [])].sort((a, b) => {
   }
 
   .bed-cleaner {
-    font-size: 7px;
+    font-size: 9px;
     font-weight: 700;
     position: absolute;
     bottom: 2px;
@@ -249,11 +255,29 @@ const houseStatuses = [...(plan?.houseStatuses ?? [])].sort((a, b) => {
 
     <div class="section-title">ΔΙΑΜΕΡΙΣΜΑΤΑ (HOUSES)</div>
     <table class="houses-table">
-      <thead><tr>
-        <th>Διαμέρισμα</th><th>Καμαριέρα</th><th>IN HOUSE</th>
-        <th>CHECK OUT</th><th>Ώρα</th><th>TAXI</th><th>BALANCE</th>
-        <th>CHECK IN</th><th>Ώρα</th><th>TAXI</th><th>BALANCE</th><th>PAX</th>
-      </tr></thead>
+      <thead>
+        <tr>
+          <th rowspan="2">Διαμέρισμα</th>
+          <th rowspan="2">Καμαριέρα</th>
+          <th rowspan="2">IN HOUSE</th>
+
+          <th colspan="4">ΑΝΑΧΩΡΗΣΗ</th>
+          <th colspan="4">ΑΦΙΞΗ</th>
+
+          <th rowspan="2">PAX</th>
+        </tr>
+        <tr>
+          <th>CHECK OUT</th>
+          <th>Ώρα</th>
+          <th>TAXI</th>
+          <th>BALANCE</th>
+
+          <th>CHECK IN</th>
+          <th>Ώρα</th>
+          <th>TAXI</th>
+          <th>BALANCE</th>
+        </tr>
+      </thead>
       <tbody>${housesRows}</tbody>
     </table>
   </div>
