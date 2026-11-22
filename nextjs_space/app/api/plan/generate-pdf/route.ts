@@ -171,7 +171,7 @@ const houseStatuses = [...(plan?.houseStatuses ?? [])].sort((a, b) => {
   .dorm-table td {
     border: 1.5px solid #000;
     width: 12.5%;
-    height: 58px;
+    height: 62px;
     vertical-align: top;
     text-align: center;
     position: relative;
@@ -183,7 +183,7 @@ const houseStatuses = [...(plan?.houseStatuses ?? [])].sort((a, b) => {
     border: none;
   }
   .bed-label {
-    font-size: 9px; font-weight: 700;
+    font-size: 11px; font-weight: 700;
     display: block;
     border-bottom: 1px solid #999;
     margin-bottom: 3px;
@@ -192,7 +192,7 @@ const houseStatuses = [...(plan?.houseStatuses ?? [])].sort((a, b) => {
 
   .symbol-wrap {
     position: absolute;
-    top: 14px;
+    top: 16px;
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
@@ -201,7 +201,7 @@ const houseStatuses = [...(plan?.houseStatuses ?? [])].sort((a, b) => {
   }
 
   .bed-cleaner {
-    font-size: 9px;
+    font-size: 10px;
     font-weight: 700;
     position: absolute;
     bottom: 2px;
@@ -217,7 +217,7 @@ const houseStatuses = [...(plan?.houseStatuses ?? [])].sort((a, b) => {
 
   /* IN text */
   .text-in {
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 800;
     letter-spacing: 0.5px;
     margin-top: 4px;
@@ -225,8 +225,8 @@ const houseStatuses = [...(plan?.houseStatuses ?? [])].sort((a, b) => {
 
   /* Κύκλοι */
   .circle {
-    width: 30px;
-    height: 30px;
+    width: 34px;
+    height: 34px;
     border-radius: 50%;
     display: inline-flex;
     align-items: center;
@@ -235,7 +235,7 @@ const houseStatuses = [...(plan?.houseStatuses ?? [])].sort((a, b) => {
     background: transparent;
     color: #000;
     font-weight: 800;
-    font-size: 9px;
+    font-size: 10px;
     line-height: 1;
   }
   .circle-plain { font-size: 0; }
