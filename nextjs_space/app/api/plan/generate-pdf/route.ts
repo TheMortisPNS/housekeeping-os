@@ -178,7 +178,10 @@ const houseStatuses = [...(plan?.houseStatuses ?? [])].sort((a, b) => {
     padding: 2px;
   }
   .bed-cell { position: relative; }
-  .bed-na { background: #eee; }
+  .dorm-table td.bed-na {
+    background: transparent;
+    border: none;
+  }
   .bed-label {
     font-size: 9px; font-weight: 700;
     display: block;
