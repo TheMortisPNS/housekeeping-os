@@ -42,11 +42,10 @@ const sortedHouses = [...(houses ?? [])].sort((a, b) => {
       </div>
 
       <div className="rounded-lg shadow-sm overflow-x-auto" style={{ backgroundColor: 'hsl(var(--card))' }}>
-        <table className="w-full min-w-[1000px]">
+        <table className="w-full min-w-[900px]">
           <thead>
             <tr className="text-xs" style={{ backgroundColor: 'hsl(var(--primary))', color: 'hsl(var(--primary-foreground))' }}>
               <th className="py-2.5 px-3 text-left font-medium">Διαμέρισμα</th>
-              <th className="py-2.5 px-2 text-center font-medium">Καμαριέρα</th>
               <th className="py-2.5 px-2 text-center font-medium border-l border-white/20">IN HOUSE</th>
               <th className="py-2.5 px-2 text-center font-medium border-l border-white/20">CHECK OUT</th>
               <th className="py-2.5 px-2 text-center font-medium">Ώρα</th>
@@ -72,22 +71,6 @@ const sortedHouses = [...(houses ?? [])].sort((a, b) => {
                   <span className="font-bold text-sm" style={{ color: 'hsl(var(--foreground))' }}>
                     {house?.houseName ?? ''}
                   </span>
-                </td>
-
-                {/* Καμαριέρα */}
-                <td className="py-2 px-2 text-center">
-                  <input
-                    type="text"
-                    value={house?.cleanerName ?? ''}
-                    placeholder="Όνομα..."
-                    onChange={(e) => house?.id && onUpdateHouse?.(house.id, { cleanerName: e.target.value })}
-                    className="text-xs text-center rounded px-1.5 py-1 outline-none w-24 border"
-                    style={{
-                      backgroundColor: 'hsl(var(--card))',
-                      color: 'hsl(var(--foreground))',
-                      borderColor: 'hsl(var(--border))',
-                    }}
-                  />
                 </td>
 
                 {/* IN HOUSE */}
