@@ -183,20 +183,6 @@ export default function DormsSection({ beds, onUpdateBed }: Props) {
                         {status === 'IN'  ? 'IN'  : ''}
                         {status === 'OUT' ? 'OUT' : ''}
                       </div>
-
-                      {/* Cleaner mini input */}
-                      <input
-                        type="text"
-                        defaultValue={bed?.cleanerName ?? ''}
-                        placeholder="—"
-                        onClick={(e) => e.stopPropagation()}
-                        onBlur={(e) => {
-                          if (bed?.id && e.target.value !== (bed?.cleanerName ?? '')) {
-                            onUpdateBed(bed.id, status, e.target.value);
-                          }
-                        }}
-                        className="w-full text-center text-[9px] border border-border rounded-lg px-1 py-0.5 bg-transparent text-foreground placeholder:text-muted-foreground/30 focus:border-[#B38B59] outline-none transition-colors"
-                      />
                     </div>
                   );
                 })}
