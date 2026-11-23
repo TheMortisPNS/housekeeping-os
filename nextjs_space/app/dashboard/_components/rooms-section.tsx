@@ -127,17 +127,6 @@ export default function RoomsSection({ rooms, onUpdateRoom }: Props) {
                 </div>
               </div>
 
-              {/* Cleaner */}
-              <input
-                type="text"
-                value={room?.cleanerName ?? ''}
-                placeholder="Καμαριέρα..."
-                onChange={(e) =>
-                  room?.id && onUpdateRoom(room.id, { cleanerName: e.target.value })
-                }
-                className="w-full text-xs border border-border rounded-lg px-2 py-1.5 bg-background text-foreground placeholder:text-muted-foreground/50 focus:border-[#B38B59] outline-none transition-colors"
-              />
-
               {/* Notes — dashed border to signal "optional" */}
               <input
                 type="text"
