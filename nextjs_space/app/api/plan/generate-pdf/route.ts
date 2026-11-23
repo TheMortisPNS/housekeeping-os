@@ -123,21 +123,21 @@ const houseStatuses = [...(plan?.houseStatuses ?? [])].sort((a, b) => {
 <style>
   @page { size: A4; margin: 8mm; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: Arial, Helvetica, sans-serif; font-size: 11px; color: #000; background: #fff; }
+  body { font-family: Arial, Helvetica, sans-serif; font-size: 14px; color: #000; background: #fff; }
 
-  .page { page-break-after: always; padding: 4mm; }
+  .page { page-break-after: always; padding: 3mm; }
   .page:last-child { page-break-after: auto; }
 
   .page-title {
-    text-align: center; font-size: 16px; font-weight: 700;
-    border-bottom: 2px solid #000; padding-bottom: 5px; margin-bottom: 4px;
+    text-align: center; font-size: 22px; font-weight: 700;
+    border-bottom: 2px solid #000; padding-bottom: 4px; margin-bottom: 4px;
     text-transform: uppercase; letter-spacing: 0.6px;
   }
-  .page-subtitle { text-align: right; font-size: 11px; font-weight: 700; margin-bottom: 10px; }
+  .page-subtitle { text-align: right; font-size: 15px; font-weight: 700; margin-bottom: 6px; }
 
   .section-title {
-    font-size: 12px; font-weight: 700; color: #000;
-    padding: 4px 0; margin: 10px 0 4px;
+    font-size: 17px; font-weight: 700; color: #000;
+    padding: 3px 0; margin: 8px 0 4px;
     border-bottom: 1.5px solid #000;
     text-transform: uppercase;
   }
@@ -145,28 +145,28 @@ const houseStatuses = [...(plan?.houseStatuses ?? [])].sort((a, b) => {
   table { width: 100%; border-collapse: collapse; margin-bottom: 6px; }
   th, td {
     border: 1.5px solid #000;
-    padding: 5px 5px;
+    padding: 4px 5px;
     text-align: center;
-    font-size: 11px;
-    line-height: 1.2;
+    font-size: 14px;
+    line-height: 1.15;
   }
   th { background: #f2f2f2; color: #000; font-weight: 700; }
 
-  .room-num { font-weight: 700; text-align: left; background: #fafafa; width: 55px; }
-  .house-name { font-weight: 700; text-align: left; background: #fafafa; }
-  .status-cell { font-weight: 700; }
+  .room-num { font-weight: 700; text-align: left; background: #fafafa; width: 70px; font-size: 16px; }
+  .house-name { font-weight: 700; text-align: left; background: #fafafa; font-size: 14px; white-space: nowrap; }
+  .status-cell { font-weight: 700; font-size: 15px; }
 
-  .houses-table th { font-size: 9px; padding: 4px 2px; }
-  .houses-table td { font-size: 10px; padding: 4px 2px; }
+  .houses-table th { font-size: 11px; padding: 4px 2px; }
+  .houses-table td { font-size: 14px; padding: 4px 2px; }
 
   /* DORMS */
-  .dorm-room { margin-bottom: 10px; break-inside: avoid; border: 1.5px solid #000; padding: 4px 6px; }
-  .dorm-header { font-size: 14px; font-weight: 700; border-left: 4px solid #000; padding-left: 6px; margin-bottom: 4px; }
+  .dorm-room { margin-bottom: 8px; break-inside: avoid; border: 1.5px solid #000; padding: 4px 6px; }
+  .dorm-header { font-size: 20px; font-weight: 700; border-left: 5px solid #000; padding-left: 8px; margin-bottom: 4px; }
   .dorm-table { width: 100%; table-layout: fixed; }
   .dorm-table td {
     border: 1.5px solid #000;
     width: 12.5%;
-    height: 56px;
+    height: 72px;
     vertical-align: top;
     text-align: center;
     position: relative;
@@ -178,7 +178,7 @@ const houseStatuses = [...(plan?.houseStatuses ?? [])].sort((a, b) => {
     border: none;
   }
   .bed-label {
-    font-size: 11px; font-weight: 700;
+    font-size: 15px; font-weight: 700;
     display: block;
     border-bottom: 1px solid #999;
     margin-bottom: 3px;
@@ -187,7 +187,7 @@ const houseStatuses = [...(plan?.houseStatuses ?? [])].sort((a, b) => {
 
   .symbol-wrap {
     position: absolute;
-    top: 16px;
+    top: 26px;
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
@@ -197,7 +197,7 @@ const houseStatuses = [...(plan?.houseStatuses ?? [])].sort((a, b) => {
 
   /* IN text */
   .text-in {
-    font-size: 15px;
+    font-size: 24px;
     font-weight: 800;
     letter-spacing: 0.5px;
     margin-top: 4px;
@@ -205,17 +205,17 @@ const houseStatuses = [...(plan?.houseStatuses ?? [])].sort((a, b) => {
 
   /* Κύκλοι */
   .circle {
-    width: 34px;
-    height: 34px;
+    width: 42px;
+    height: 42px;
     border-radius: 50%;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border: 2.5px solid #000;
+    border: 3px solid #000;
     background: transparent;
     color: #000;
     font-weight: 800;
-    font-size: 10px;
+    font-size: 13px;
     line-height: 1;
   }
   .circle-plain { font-size: 0; }
