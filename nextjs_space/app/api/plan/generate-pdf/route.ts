@@ -50,7 +50,6 @@ const houseStatuses = [...(plan?.houseStatuses ?? [])].sort((a, b) => {
       <td class="status-cell">${escapeHtml(statusLabel)}</td>
       <td>${escapeHtml(rs?.checkOutTime)}</td>
       <td>${escapeHtml(rs?.checkInTime)}</td>
-      <td class="cleaner-cell">${escapeHtml(rs?.cleanerName)}</td>
       <td>${escapeHtml(rs?.notes)}</td>
     </tr>`;
   }
@@ -60,7 +59,6 @@ const houseStatuses = [...(plan?.houseStatuses ?? [])].sort((a, b) => {
   for (const hs of houseStatuses) {
     housesRows += `<tr>
       <td class="house-name">${escapeHtml(hs?.houseName)}</td>
-      <td class="cleaner-cell">${escapeHtml(hs?.cleanerName)}</td>
       <td>${hs?.inHouse ? '✓' : ''}</td>
       <td>${hs?.checkOut ? '✓' : ''}</td>
       <td>${escapeHtml(hs?.checkOutTime)}</td>
@@ -96,7 +94,6 @@ const houseStatuses = [...(plan?.houseStatuses ?? [])].sort((a, b) => {
 
       const bed = beds.find((b: any) => b?.bedLabel === label);
       const status = bed?.status ?? 'empty';
-      const cleaner = escapeHtml(bed?.cleanerName);
 
       let symbolHtml = '';
       if (status === 'IN') {
@@ -110,7 +107,6 @@ const houseStatuses = [...(plan?.houseStatuses ?? [])].sort((a, b) => {
       bedCells += `<td class="bed-cell">
         <div class="bed-label">${escapeHtml(label)}</div>
         ${symbolHtml ? `<div class="symbol-wrap">${symbolHtml}</div>` : ''}
-        <div class="bed-cleaner">${cleaner || ''}</div>
       </td>`;
     }
 
@@ -158,7 +154,6 @@ const houseStatuses = [...(plan?.houseStatuses ?? [])].sort((a, b) => {
 
   .room-num { font-weight: 700; text-align: left; background: #fafafa; width: 55px; }
   .house-name { font-weight: 700; text-align: left; background: #fafafa; }
-  .cleaner-cell { font-weight: 700; font-size: 11px; }
   .status-cell { font-weight: 700; }
 
   .houses-table th { font-size: 9px; padding: 4px 2px; }
@@ -171,7 +166,7 @@ const houseStatuses = [...(plan?.houseStatuses ?? [])].sort((a, b) => {
   .dorm-table td {
     border: 1.5px solid #000;
     width: 12.5%;
-    height: 62px;
+    height: 56px;
     vertical-align: top;
     text-align: center;
     position: relative;
@@ -198,21 +193,6 @@ const houseStatuses = [...(plan?.houseStatuses ?? [])].sort((a, b) => {
     width: 100%;
     display: flex;
     justify-content: center;
-  }
-
-  .bed-cleaner {
-    font-size: 10px;
-    font-weight: 700;
-    position: absolute;
-    bottom: 2px;
-    left: 0;
-    right: 0;
-    text-align: center;
-    border-top: 1px dotted #999;
-    padding-top: 1px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 
   /* IN text */
@@ -251,7 +231,7 @@ const houseStatuses = [...(plan?.houseStatuses ?? [])].sort((a, b) => {
     <table>
       <thead><tr>
         <th>Δωμάτιο</th><th>Status</th><th>Check-out</th><th>Check-in</th>
-        <th>Καμαριέρα</th><th>Σημειώσεις</th>
+        <th>Σημειώσεις</th>
       </tr></thead>
       <tbody>${roomsRows}</tbody>
     </table>
@@ -261,7 +241,6 @@ const houseStatuses = [...(plan?.houseStatuses ?? [])].sort((a, b) => {
       <thead>
         <tr>
           <th rowspan="2">Διαμέρισμα</th>
-          <th rowspan="2">Καμαριέρα</th>
           <th rowspan="2">IN HOUSE</th>
 
           <th colspan="4">ΑΝΑΧΩΡΗΣΗ</th>
