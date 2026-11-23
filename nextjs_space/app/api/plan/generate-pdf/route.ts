@@ -3,7 +3,7 @@ export const dynamic = 'force-dynamic';
 import { NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
 import { authOptions } from '@/lib/auth-options';
-import { prisma } from '@/lib/prisma'; 
+import { prisma } from '@/lib/prisma';
 import { DORM_ROOMS, HOUSES } from '@/lib/constants';
 
 function escapeHtml(str: string | null | undefined): string {
@@ -160,13 +160,13 @@ const houseStatuses = [...(plan?.houseStatuses ?? [])].sort((a, b) => {
   .houses-table td { font-size: 14px; padding: 4px 2px; }
 
   /* DORMS */
-  .dorm-room { margin-bottom: 8px; break-inside: avoid; border: 1.5px solid #000; padding: 4px 6px; }
-  .dorm-header { font-size: 20px; font-weight: 700; border-left: 5px solid #000; padding-left: 8px; margin-bottom: 4px; }
-  .dorm-table { width: 100%; table-layout: fixed; }
+  .dorm-room { margin-bottom: 6px; break-inside: avoid; border: 1.5px solid #000; padding: 3px 5px; }
+  .dorm-header { font-size: 18px; font-weight: 700; border-left: 5px solid #000; padding-left: 8px; margin-bottom: 3px; line-height: 1.15; }
+  .dorm-table { width: 100%; table-layout: fixed; margin-bottom: 0; }
   .dorm-table td {
     border: 1.5px solid #000;
     width: 12.5%;
-    height: 72px;
+    height: 56px;
     vertical-align: top;
     text-align: center;
     position: relative;
@@ -178,16 +178,17 @@ const houseStatuses = [...(plan?.houseStatuses ?? [])].sort((a, b) => {
     border: none;
   }
   .bed-label {
-    font-size: 15px; font-weight: 700;
+    font-size: 14px; font-weight: 700;
     display: block;
     border-bottom: 1px solid #999;
-    margin-bottom: 3px;
+    margin-bottom: 2px;
     text-align: left;
+    line-height: 1.1;
   }
 
   .symbol-wrap {
     position: absolute;
-    top: 26px;
+    top: 21px;
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
@@ -197,16 +198,16 @@ const houseStatuses = [...(plan?.houseStatuses ?? [])].sort((a, b) => {
 
   /* IN text */
   .text-in {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 800;
     letter-spacing: 0.5px;
-    margin-top: 4px;
+    line-height: 1.1;
   }
 
   /* Κύκλοι */
   .circle {
-    width: 42px;
-    height: 42px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     display: inline-flex;
     align-items: center;
@@ -215,7 +216,7 @@ const houseStatuses = [...(plan?.houseStatuses ?? [])].sort((a, b) => {
     background: transparent;
     color: #000;
     font-weight: 800;
-    font-size: 13px;
+    font-size: 11px;
     line-height: 1;
   }
   .circle-plain { font-size: 0; }
